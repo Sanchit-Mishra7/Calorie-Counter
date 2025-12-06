@@ -1,0 +1,7 @@
+{
+  "name": "Calorie Counter   ",
+  "description": "An AI-first calorie counter that uses computer vision to track meals, adapts goals automatically, and provides nutrition quality scores.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
