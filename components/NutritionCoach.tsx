@@ -5,7 +5,7 @@ import { createCoachChat, generateRecipe } from '../services/geminiService';
 import { Button } from './ui/Button';
 import { Card } from './ui/Card';
 import { Send, Bot, Loader2, Utensils, ChefHat, Sparkles, ChefHat as ChefIcon, AlertTriangle } from 'lucide-react';
-import { Chat, GenerateContentResponse } from '@google/genai';
+import {  GoogleGenerativeAI } from '@google/genai';
 
 interface NutritionCoachProps {
   userProfile: UserProfile;

@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Sanchit-Mishra7/Calorie-Counter#readme",
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "@vitejs/plugin-react": "^5.1.1",
     "lucide-react": "^0.556.0",
     "react": "^19.2.1",
