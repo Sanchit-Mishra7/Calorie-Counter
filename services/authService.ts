@@ -48,4 +48,51 @@ export const authService = {
     return newUser;
   },
 
-  
+  login: (username: string, password: string): UserAccount => {
+    const users = authService.getAllUsers();
+    const user = users.find(u => u.username === username);
+
+    if (!user || user.passwordHash !== hashPassword(password)) {
+      throw new Error('Invalid username or password');
+    }
+
+    // Set session
+    localStorage.setItem(CURRENT_USER_KEY, user.id);
+    return user;
+  },
+
+  logout: () => {
+    localStorage.removeItem(CURRENT_USER_KEY);
+  },
+
+  getCurrentUser: (): UserAccount | null => {
+    const userId = localStorage.getItem(CURRENT_USER_KEY);
+    if (!userId) return null;
+    
+    const users = authService.getAllUsers();
+    return users.find(u => u.id === userId) || null;
+  },
+
+  getAllUsers: (): UserAccount[] => {
+    const usersJson = localStorage.getItem(USERS_KEY);
+    return usersJson ? JSON.parse(usersJson) : [];
+  },
+
+  // --- DATABASE ---
+
+  saveUserData: (userId: string, data: UserData) => {
+    localStorage.setItem(DATA_PREFIX + userId, JSON.stringify(data));
+  },
+
+  loadUserData: (userId: string): UserData => {
+    const dataJson = localStorage.getItem(DATA_PREFIX + userId);
+    if (dataJson) {
+      return JSON.parse(dataJson);
+    }
+    // Default structure if no data exists
+    return {
+      profile: null,
+      logs: [{ date: new Date().toISOString().split('T')[0], meals: [] }]
+    };
+  }
+};
