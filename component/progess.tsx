@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Card } from './uii/Card';
+import { Card } from './ui/Card';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
 import { DailyLog, UserProfile } from '../types';
 import { Calendar, Download } from 'lucide-react';
