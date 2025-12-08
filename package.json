@@ -1,7 +1,7 @@
 {
   "name": "calorie-counter",
   "version": "1.0.0",
-  "description": "��#\u0000 \u0000C\u0000a\u0000l\u0000o\u0000r\u0000i\u0000e\u0000-\u0000C\u0000o\u0000u\u0000n\u0000t\u0000e\u0000r\u0000 \u0000w\u0000e\u0000b\u0000s\u0000i\u0000t\u0000e\u0000\r\u0000 \u0000",
+  "description": "Calorie Counter website",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -20,10 +20,12 @@
   },
   "homepage": "https://github.com/Sanchit-Mishra7/Calorie-Counter#readme",
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "@vitejs/plugin-react": "^5.1.1",
     "lucide-react": "^0.556.0",
     "react": "^19.2.1",
-    "react-dom": "^19.2.1"
+    "react-dom": "^19.2.1",
+    "recharts": "^3.5.1"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
